@@ -1,1 +1,5 @@
 jupyterlab
+jupyter-collaboration
+pandas
+seaborn
+matplotlib

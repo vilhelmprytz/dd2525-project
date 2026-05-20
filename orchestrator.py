@@ -58,8 +58,6 @@ def run_capslock(
     result = container.wait()
     if result["StatusCode"] != 0:
         print(f"ERROR: {clone_url}@{tag} exited with code {result['StatusCode']}")
-    else:
-        print(f"OK: {clone_url}@{tag} -> {repo_out}/{tag}.json")
 
 
 def main():

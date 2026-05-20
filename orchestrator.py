@@ -52,12 +52,16 @@ def run_capslock(
         docker_image,
         command=["/bin/sh", "-c", cmd],
         volumes={str(repo_out.resolve()): {"bind": "/results", "mode": "rw"}},
-        remove=True,
         detach=True,
     )
     result = container.wait()
     if result["StatusCode"] != 0:
+        logs = container.logs().decode("utf-8")
+        (repo_out / f"{tag}.error.log").write_text(
+            f"repo: {clone_url}\ntag: {tag}\nexitcode: {result['StatusCode']}\n\n{logs}"
+        )
         print(f"ERROR: {clone_url}@{tag} exited with code {result['StatusCode']}")
+    container.remove()
 
 
 def main():

@@ -8,6 +8,7 @@ RESULT_DIR = "results"
 
 import pathlib
 import docker
+from tqdm import tqdm
 
 
 def read_repolist(filename: str):
@@ -56,7 +57,6 @@ def run_capslock(
     )
     result = container.wait()
     if result["StatusCode"] != 0:
-        print(container.logs())
         print(f"ERROR: {clone_url}@{tag} exited with code {result['StatusCode']}")
     else:
         print(f"OK: {clone_url}@{tag} -> {repo_out}/{tag}.json")
@@ -70,7 +70,9 @@ def main():
     client = docker.from_env()
     image = build_docker_image(client)
 
-    run_capslock(client, image, "https://github.com/gin-gonic/gin.git", RESULT_DIR)
+    print(f"Running capslock on all repositories")
+    for repo in tqdm(repolist):
+        run_capslock(client, image, repo, RESULT_DIR)
 
 
 if __name__ == "__main__":

@@ -19,7 +19,7 @@ https://github.com/valyala/fasthttp.git
 https://github.com/go-chi/chi.git
 https://github.com/redis/go-redis.git
 https://github.com/gorilla/mux.git
-https://github.com/gofr-dev/gofr.gits
+https://github.com/gofr-dev/gofr.git
 https://github.com/samber/lo.git
 https://github.com/qax-os/excelize.git
 https://github.com/apache/casbin.git

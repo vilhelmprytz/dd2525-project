@@ -11,7 +11,7 @@ token = os.environ["GITHUB_TOKEN"]
 headers = {"Authorization": f"Bearer {token}"}
 
 
-def fetch_github_toplist(n: int = 200):
+def fetch_github_toplist(n: int = 500):
     pages = math.ceil(n / 100)
     res = []
     for i in range(1, pages + 1):

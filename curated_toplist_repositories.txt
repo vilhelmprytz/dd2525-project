@@ -3,7 +3,6 @@ https://github.com/spf13/cobra.git
 https://github.com/charmbracelet/bubbletea.git
 https://github.com/go-gorm/gorm.git
 https://github.com/gofiber/fiber.git
-https://github.com/wailsapp/wails.git
 https://github.com/zeromicro/go-zero.git
 https://github.com/beego/beego.git
 https://github.com/labstack/echo.git
@@ -48,3 +47,4 @@ https://github.com/charmbracelet/lipgloss.git
 https://github.com/google/go-github.git
 https://github.com/panjf2000/gnet.git
 https://github.com/sashabaranov/go-openai.git
+https://github.com/golang/protobuf.git

@@ -1,4 +1,5 @@
 requests
 black
+black[jupyter]
 docker
 tqdm
